@@ -21,7 +21,7 @@ public class SupportFunctions {
             }
         }
         while(contadorHaces>0){
-            if(valorTotal+11==21&&contadorHaces==1){
+            if((valorTotal+11==21&&contadorHaces==1)||valorTotal+11<21){
                 valorTotal += 11;
             }else{
                 valorTotal+=1;
@@ -41,8 +41,8 @@ public class SupportFunctions {
     }
     
     public static boolean isBlackJack(ArrayList<String> jugador){
-        if(jugador.size()==2&&jugador.contains("A")&&jugador.contains("K")||
-                jugador.contains("J")||jugador.contains("Q")){
+        if(jugador.size()==2&&jugador.contains("A")&&(jugador.contains("K")||
+                jugador.contains("J")||jugador.contains("Q"))){
             return true;
         }
         return false;
